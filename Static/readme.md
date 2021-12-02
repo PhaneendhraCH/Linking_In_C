@@ -12,34 +12,34 @@
 
 ## Files :
 
-	** lib_add.c ** -> To add two interger numbers.
+	**lib_add.c** -> To add two interger numbers.
 
-	** lib_sub.c ** -> To subtract two integer numbers.
+	**lib_sub.c** -> To subtract two integer numbers.
 
-	** calc.h ** -> It has Function declarations of lib_add.c and lib_sub.c
+	**calc.h** -> It has Function declarations of lib_add.c and lib_sub.c
 
-	** main.c ** -> Main File in C which includes both lib_add.c and lib_sub.c
+	**main.c** -> Main File in C which includes both lib_add.c and lib_sub.c
 
 
 ## Compilation:
 
-	** Compile lib_add.c **
+	**Compile lib_add.c**
 		gcc -c lib_add.c -o lib_add.o
 		
-	** Compile lib_sub.c **
+	**Compile lib_sub.c**
 		gcc -c lib_sub.c -o lib_sub.o
 		
-	Create a Static Library includes both ** lib_add.c ** and **l ib_sub.c **
+	Create a Static Library includes both **lib_add.c** and **lib_sub.c**
 
-		** ar rcs lib_calc.a lib_add.o lib_sub.o **
+		**ar rcs lib_calc.a lib_add.o lib_sub.o**
 		
 		Here,
-		** ar ** = archive, 
+		**ar** = archive, 
 		
-		** rcs* * = revision control system
+		**rcs** = revision control system
 		      rcs automates the storing, retrieval, logging, identification, and merging of revisions,
 		
-		** lib_calc.a ** = name of the static library file (including both lib_add and lib_sub)
+		**lib_calc.a** = name of the static library file (including both lib_add and lib_sub)
 
 	Compile main.c
 		gcc -c main.c -o main.o
