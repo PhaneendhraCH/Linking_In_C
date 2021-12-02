@@ -58,6 +58,12 @@
 	 	    Here the lib_calc.so is been copied to "/usr/lib/" directory
 		
 	Execute :
+	
+		If you are executing using make command i.e. (make main) then ensure that 
+		you have added the library file to "usr/lib" folder. You can do that by executing 
+		below command
+			sudo cp lib_calc.so /usr/lib
+			
 		./main
 		
 	      
