@@ -16,7 +16,7 @@ linked_list.o : linked_list.c
 		#gcc -c linked_list.c -o linked_list.o
 
 lib_linkedlist.a: remove_last.o
-		 $(static) lib_linkedlist.a $^
+		 $(static) $@ $<
 		 #ar rcs lib_linkedlist.a remove_last.o
 
 remove_last.o : remove_last.c
