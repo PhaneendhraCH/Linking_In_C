@@ -4,7 +4,7 @@ cflags = -c
 static = ar rcs
 
 linked : linked_list.o lib_linkedlist.a
-	  $(cc) -o linked $^ -L. lib_linkedlist.a
+	  $(cc) -o $@ $^ -L. lib_linkedlist.a
 	  #gcc -o linked linked_list.o -L. lib_linkedlist.a
 
 linked_list.o : linked_list.c
