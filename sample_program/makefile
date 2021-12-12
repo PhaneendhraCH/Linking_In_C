@@ -3,8 +3,12 @@ cc = gcc
 cflags = -c
 static = ar rcs
 
+#$@ = target variable
+#$^ = prerequisites for all files separated by spaces, without duplicates
+#$< = first prerequisite file name
+
 linked : linked_list.o lib_linkedlist.a
-	  $(cc) -o $@ $^ -L. lib_linkedlist.a
+	  $(cc) -o $@ -L. $^
 	  #gcc -o linked linked_list.o -L. lib_linkedlist.a
 
 linked_list.o : linked_list.c
