@@ -1,14 +1,20 @@
-\linked : linked_list.o lib_linkedlist.a
-	  gcc -o linked linked_list.o -L. lib_linkedlist.a
+cc = gcc
+cflags = -c 
+
+linked : linked_list.o lib_linkedlist.a
+	  $(cc) -o linked $^ -L. lib_linkedlist.a
+	  #gcc -o linked linked_list.o -L. lib_linkedlist.a
 
 linked_list.o : linked_list.c
-		gcc -c linked_list.c -o linked_list.o
+		$(cc) $(cflags) $^ -o $@
+		#gcc -c linked_list.c -o linked_list.o
 
 lib_linkedlist.a: remove_last.o
 		 ar rcs lib_linkedlist.a remove_last.o
 
 remove_last.o : remove_last.c
-		gcc -c remove_last.c
+		$(cc) $(cflags) $<
+		#gcc -c remove_last.c
 		
 
 clean :
