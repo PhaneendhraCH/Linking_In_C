@@ -1,5 +1,7 @@
+#Macros 
 cc = gcc
-cflags = -c 
+cflags = -c
+static = ar rcs
 
 linked : linked_list.o lib_linkedlist.a
 	  $(cc) -o linked $^ -L. lib_linkedlist.a
@@ -10,7 +12,8 @@ linked_list.o : linked_list.c
 		#gcc -c linked_list.c -o linked_list.o
 
 lib_linkedlist.a: remove_last.o
-		 ar rcs lib_linkedlist.a remove_last.o
+		 $(static) lib_linkedlist.a $^
+		 #ar rcs lib_linkedlist.a remove_last.o
 
 remove_last.o : remove_last.c
 		$(cc) $(cflags) $<
